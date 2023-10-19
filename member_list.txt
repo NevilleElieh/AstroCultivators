@@ -1,0 +1,7 @@
+Codi Yost - A dandy boy
+<<<<<<< HEAD
+Sandra Davis
+Neville Elieh
+=======
+Sandra Davis - a fancy lady
+>>>>>>> deadd5edc1cbb1b04ccbd675f5078f9e76fa869d
