@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CSUN ARCs Astro Cultivator</title>
+</head>
+<body>
+    <div class="container-all">
+        <h1>CSUN ARCs Astro Cultivator Dashboard</h1>
+        <div class="container-main">
+            <div class="left">
+                <div class="top">
+                    
+                </div>
+                <div class="bottom">
+                    <h2>Most recent images</h2>
+                    <div class="image-container">
+                        <div class="rgb-image-container image-container"> <!-- I am using stand in images -->
+                            <div class="rgb-image image"></div>
+                            <h3>timestamp</h3>
+                        </div>
+                        <div class="hs-image-container image-container"> <!-- I am using stand in images -->
+                            <div class="hs-image image"></div>
+                            <h3>timestamp</h3>
+                        </div>
+                        <!-- Images from: https://research.csiro.au/robotics/early-plant-disease-detection-using-hyperspectral-imaging-combined-with-machine-learning-and-iot/ -->
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <h2>Sensor Data</h2>
+                <div class="sensor-container">
+                    <div class="humidity-chart-container chart-container">
+                        <canvas id="humidity-canvas" class="chart"></canvas>
+                    </div>
+                    <div class="temperature-chart-container chart-container">
+                        <canvas id="temperature-canvas" class="chart"></canvas>
+                    </div>
+                    <!-- <div class="pressure-container chart-container">
+                        <canvas id="pressure-canvas" class="chart"></canvas>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>    
+    <script src="./scripts/sensorCharts.js"></script>
+</body>
+</html>
