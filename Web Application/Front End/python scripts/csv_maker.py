@@ -2,6 +2,9 @@ import csv
 import random
 import time
 
+'''
+test change
+'''
 document_name = 'sensor.csv'
 field_names = ['time', 'temperature', 'humidity', 'pressure', 'altitude']
 
@@ -17,8 +20,6 @@ Altitude:         0     to      9144   m
 '''
 file = open(document_name, 'a', newline='')
 writer = csv.writer(file)
-
-while True:
-    writer.writerow([time.time(),random.randrange(0, 50), random.randrange(0, 100), random.randrange(300, 1100), random.randrange(0, 9144)])
+writer.writerow([time.time(),random.randrange(0, 50), random.randrange(0, 100), random.randrange(300, 1100), random.randrange(0, 9144)])
 
 file.close()
