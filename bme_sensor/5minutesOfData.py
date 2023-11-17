@@ -16,7 +16,7 @@ second = 0
 
 # csv file setup
 fieldNames = ['timestamp', 'temperature', 'humidity', 'pressure']
-document_names = ['seconds_sensor.csv']
+document_names = ['five_minutes_data.csv']
 
 def updateSensor(): # updates all important sensor information
     global data
@@ -27,7 +27,8 @@ def updateSensor(): # updates all important sensor information
     data_collection = [data.timestamp.strftime('%x %H:%M:%S'), f'{data.temperature:3.2f}', f'{data.humidity:3.2f}', f'{data.pressure:3.2f}']
     second = data.timestamp.second
 
-while True:
+# while True:
+for i in range(300):
     updateSensor()
     
     with open(document_names[0],'a', newline='') as seconds_csv:
