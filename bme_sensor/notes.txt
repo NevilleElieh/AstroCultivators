@@ -7,5 +7,10 @@ half hour csv values - 12 entries
 day csv values - 48 entries
 30 day csv values - 30 entries
 
-
-to how many values should I round the data?
+sensor range
+	Pressure
+		300 hpa - 1100 hpa
+	Temperature
+		-40 C - 85C
+	Humidity
+		0 - 100%
