@@ -8,6 +8,8 @@ document_name = 'test'
 def main():
     sensor = SensorData(port, address, document_name)
     
+    print(type(sensor.data))
+    
     while True:
         sensor.run()
         sleep(1)
