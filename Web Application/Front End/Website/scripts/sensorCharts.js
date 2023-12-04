@@ -2,6 +2,11 @@
 const humidityCanvas = document.getElementById("humidity-canvas").getContext("2d");
 const temperatureCanvas = document.getElementById("temperature-canvas");
 const pressureCanvas = document.getElementById("pressure-canvas");
+const currentHumidity = document.getElementById("current-humidity");
+const currentTemp = document.getElementById("current-temp");
+const currentPressure = document.getElementById("current-pressure");
+const emergencyStop = document.getElementById("emergency-stop");
+const homeRobot = document.getElementById("home-robot");
 
 /*const dummyData = [
     [1698627883.1651702,36,70,546,4932],
@@ -53,10 +58,19 @@ const getPressureData = () => {
     data = [];
 
     dummyData.forEach(element => {
-        data.push(element[1])
+        data.push(element[3])
     })
 
     return data;
+}
+const getCurrentTemp = () => {
+    return dummyData[dummyData.length - 1][1];
+}
+const getCurrentHumidity = () => {
+    return dummyData[dummyData.length - 1][2];
+}
+const getCurrentPressure = () => {
+    return  dummyData[dummyData.length - 1][3];
 }
 
 var humidityChart = 
@@ -148,11 +162,9 @@ var presChart =
             }
         }
 });
-
-
-const emergencyStop = document.getElementById("Emergency-Stop");
-const homeRobot = document.getElementById("Home-Robot");
-
+currentHumidity.innerHTML = getCurrentHumidity();
+currentTemp.innerHTML = getCurrentTemp();
+currentPressure.innerHTML = getCurrentPressure();
 // Add a click event listener to make it clickable
 emergencyStop.addEventListener("click", function() {
     alert("You clicked EMERGENCY STOP. Robot stopping now!");
