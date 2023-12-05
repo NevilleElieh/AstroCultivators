@@ -3,26 +3,42 @@ document.addEventListener("DOMContentLoaded", function () {
     const humidityCanvas = document.getElementById("humidity-canvas").getContext("2d");
     const temperatureCanvas = document.getElementById("temperature-canvas").getContext("2d");
     const pressureCanvas = document.getElementById("pressure-canvas").getContext("2d");
+    const currentHumidity = document.getElementById("current-humidity");
+    const currentTemp = document.getElementById("current-temp");
+    const currentPressure = document.getElementById("current-pressure");
 
     let humidityChart, temperatureChart, pressureChart;
 
     const getTimeLabels = (data) => {
-        const lastTenEntries = data.slice(-3);
+        const lastTenEntries = data.slice(-10);
         return lastTenEntries.map(entry => entry[0]);
     }
 
     const getTempData = (data) => {
-        const lastTenEntries = data.slice(-3);
+        const lastTenEntries = data.slice(-10);
         return lastTenEntries.map(entry => entry[1]);
     }
 
     const getHumidityData = (data) => {
-        const lastTenEntries = data.slice(-3);
+        const lastTenEntries = data.slice(-10);
         return lastTenEntries.map(entry => entry[2]);
     }
 
     const getPressureData = (data) => {
-        const lastTenEntries = data.slice(-3);
+        const lastTenEntries = data.slice(-10);
+        return lastTenEntries.map(entry => entry[3]);
+    }
+
+    const getCurrentTemp = (data) => {
+        const lastTenEntries = data.slice(-2);
+        return lastTenEntries.map(entry => entry[1]);
+    }
+    const getCurrentHumidity = (data) => {
+        const lastTenEntries = data.slice(-2);
+        return lastTenEntries.map(entry => entry[2]);
+    }
+    const getCurrentPressure = (data) => {
+        const lastTenEntries = data.slice(-2);
         return lastTenEntries.map(entry => entry[3]);
     }
 
@@ -145,6 +161,10 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         
     }
+
+    /* currentHumidity.innerHTML = getCurrentHumidity(data);
+    currentTemp.innerHTML = getCurrentTemp(data);
+    currentPressure.innerHTML = getCurrentPressure(data); */
 
     function handleCSV(csvText) {
         Papa.parse(csvText, {
