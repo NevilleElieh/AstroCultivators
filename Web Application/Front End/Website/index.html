@@ -8,77 +8,78 @@
     <title>CSUN ARCS Astro Cultivator</title>
 </head>
 <body>
-    <div class = "container-all">
-        <div class="container-main">
-            <div class="left">
-                <h1>Astro Cultivator Dashboard</h1>
-                <div class="top">
-                    <div class ="element-container">
-                        <div class = "rounded-square" id="Emergency-Stop">
-                            <h3>EMERGENCY STOP</h3>
-                        </div>
-                        <div class="circle" id="Home-Robot">
-                            <h3>Home Robot</h3>
-                        </div>
-                        <div class="rectangle">
-                            <h3>Plant Status Update</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                                Donec facilisis tellus quis est pretium, nec varius lacus fermentum. 
-                                Fusce mollis molestie lectus vitae condimentum. 
-                                In hac habitasse platea dictumst. Etiam lobortis, 
-                                tortor in molestie consequat, enim quam rhoncus odio, 
-                                eu bibendum velit purus quis justo.
-                            </p> 
-                        </div>
-                    </div>
-                        <div class="serialTerminalRect">
-                            <h3>Serial Terminal</h3>
-                            <div class="input-area">
-                                <textarea rows="4" cols="50" placeholder="Enter Command Here..."></textarea>
-                            </div>
-                        </div>
-
-                    
+    <!-- <h1>Astro Cultivator Dashboard</h1> -->
+    <div class="container-main">
+        <div class="left">
+            <div class="serial-terminal">
+                <h3>Serial Terminal</h3>
+                <div class="input-area">
+                    <textarea rows="25" cols="50" placeholder="Enter Command Here..."></textarea>
                 </div>
-                   
-        
-                    
-                <div class="bottom">
-                    <h2>Most Recent Images</h2>
-                    <div class="image-container">
-                        <div class="rgb-image-container image-container"> <!-- I am using stand in images -->
-                            <div class="rgb-image image"></div>
-                            <h3>RGB Image</h3>
+            </div>
+            <div class="plant-status">
+                <h3>Plant Status Update</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Donec facilisis tellus quis est pretium, nec varius lacus fermentum. 
+                    Fusce mollis molestie lectus vitae condimentum. 
+                    In hac habitasse platea dictumst. Etiam lobortis, 
+                    tortor in molestie consequat, enim quam rhoncus odio, 
+                    eu bibendum velit purus quis justo.
+                </p> 
+            </div>
+            <div class ="button-container">
+                <div class="rounded-square" id="emergency-stop">
+                    <h3>STOP ROBOT</h3>
+                </div>
+                <div class="circle" id="home-robot">
+                    <h3>Home Robot</h3>
+                </div>
+            </div>
+                                            
+        </div>
+        <div class="right">
+            <div class="top">
+                <h2>Sensor Data</h2>
+                <div class="sensor-data-container">
+                    <div class="chart-container">
+                        <div class="humidity-chart-container data-display">
+                            <div class="chart-container">
+                                <canvas id="humidity-canvas" class="chart"></canvas>
+                            </div>
+                            <div id="current-humidity" class="humidity-chart-container current-data"></div>
                         </div>
-                        <div class="hs-image-container image-container"> <!-- I am using stand in images -->
-                            <div class="hs-image image"></div>
-                            <h3>Hyperspectral Image</h3>
+                        <div class="temperature-chart-container data-display">
+                            <div class="chart-container">
+                                <canvas id="temperature-canvas" class="chart"></canvas>
+                            </div>
+                            <div id="current-temp" class="temperature-chart-container current-data"></div>
                         </div>
-                        <div class="hs-image-container image-container"> <!-- I am using stand in images -->
-                            <div class=""></div>
-                            <h3>Object Detected Image</h3>
+                        <div class="pressure-chart-container data-display">
+                            <div class="chart-container">
+                                <canvas id="pressure-canvas" class="chart"></canvas>
+                            </div>
+                            <div id="current-pressure" class="pressure-chart-container current-data"></div>
                         </div>
-                        <!-- Images from: https://research.csiro.au/robotics/early-plant-disease-detection-using-hyperspectral-imaging-combined-with-machine-learning-and-iot/ -->
                     </div>
                 </div>
             </div>
-            <div class="right">
-                <h2>Sensor Data</h2>
-                    <div class="chart-container">
-
-                        <div class="humidity-chart-container chart-container">
-                            <canvas id="humidity-canvas" class="chart"></canvas>
-                        </div>
-
-                        <div class="temperature-chart-container chart-container">
-                            <canvas id="temperature-canvas" class="chart"></canvas>
-                        </div>
-
-                        <div class="pressure-canvas chart-container">
-                            <canvas id="pressure-canvas" class="chart"></canvas>
-                        </div>
-                    
+            <div class="bottom">
+                <h2>Most Recent Images</h2>
+                <div class="image-container">
+                    <div class="rgb-image-container image-container i"> <!-- I am using stand in images -->
+                        <div class="rgb-image image"></div>
+                        <h3>RGB Image</h3>
                     </div>
+                    <div class="hs-image-container image-container i"> <!-- I am using stand in images -->
+                        <div class="hs-image image"></div>
+                        <h3>Hyperspectral Image</h3>
+                    </div>
+                    <div class="od-image-container image-container i"> <!-- I am using stand in images -->
+                        <div class="od-image image"></div>
+                        <h3>Object Detected Image</h3>
+                    </div>
+                    <!-- Images from: https://research.csiro.au/robotics/early-plant-disease-detection-using-hyperspectral-imaging-combined-with-machine-learning-and-iot/ -->
+                </div>
             </div>
         </div>
     </div>
