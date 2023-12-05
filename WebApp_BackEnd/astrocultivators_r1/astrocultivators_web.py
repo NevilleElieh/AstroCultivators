@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 #Get most recent image file
 def get_most_recent_image():
-    image_directory = '/home/orin/astrocultivators_r1/static/RGB_Images' #path to image directory
+    image_directory = '/home/orin/AstroCultivators/WebApp_BackEnd/astrocultivators_r1/static/RGB_Images' #path to image directory
     images = os.listdir(image_directory)
     if images:
         images.sort(reverse=True, key=lambda x:
