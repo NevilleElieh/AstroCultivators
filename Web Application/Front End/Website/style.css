@@ -4,6 +4,9 @@ html, body, .container-main {
     padding: 0;
     margin: 0;
 }
+body {
+    background-image: linear-gradient(#1b4965,#7cae7a)
+}
 .container-main, .left, .button-container, .button-container .rounded-square, 
 .button-container .circle, .right, .sensor-data-container, .image-container,
 .data-display, .current-data, .image, .i  {
@@ -79,6 +82,9 @@ html, body, .container-main {
     .top {
         height: 70%;
     }
+        .chart-container {
+            background-color: white;
+        }
         .top .chart-container {
             height: 100%;
             width: 90%;
