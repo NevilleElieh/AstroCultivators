@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function readCSVFile() {
-        fetch('testData.csv')
+        fetch('../static/Website/testData.csv')
             .then(response => response.text())
             .then(handleCSV)
             .catch(error => console.error('Error reading CSV file:', error));
