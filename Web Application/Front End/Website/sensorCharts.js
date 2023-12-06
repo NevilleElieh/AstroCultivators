@@ -82,6 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 minRotation: 0
                             }
                         }]
+                    },
+                    animation: {
+                        duration: 0, // Set the duration of the animation to 0 to disable it
+                        //easing: 'linear' // Set the easing to 'linear' (optional, but can be used to customize)
                     }
                 }
             });
@@ -119,6 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 display: false
                             }
                         }]
+                    },
+                    animation: {
+                        duration: 0, // Set the duration of the animation to 0 to disable it
+                        //easing: 'linear' // Set the easing to 'linear' (optional, but can be used to customize)
                     }
                 }
             });
@@ -156,7 +164,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                 display: false
                             }
                         }]
+                        
+                    },
+                    animation: {
+                        duration: 0, // Set the duration of the animation to 0 to disable it
+                        //easing: 'linear' // Set the easing to 'linear' (optional, but can be used to customize)
                     }
+                    
                 }
             });
         

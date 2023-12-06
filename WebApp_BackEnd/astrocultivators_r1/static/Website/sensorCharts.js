@@ -82,6 +82,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 minRotation: 0
                             }
                         }]
+                    },
+                    animation: {
+                        duration: 0, // Set the duration of the animation to 0 to disable it
+                        //easing: 'linear' // Set the easing to 'linear' (optional, but can be used to customize)
                     }
                 }
             });
@@ -119,6 +123,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 display: false
                             }
                         }]
+                    },
+                    animation: {
+                        duration: 0, // Set the duration of the animation to 0 to disable it
+                        //easing: 'linear' // Set the easing to 'linear' (optional, but can be used to customize)
                     }
                 }
             });
@@ -156,7 +164,13 @@ document.addEventListener("DOMContentLoaded", function () {
                                 display: false
                             }
                         }]
+                        
+                    },
+                    animation: {
+                        duration: 0, // Set the duration of the animation to 0 to disable it
+                        //easing: 'linear' // Set the easing to 'linear' (optional, but can be used to customize)
                     }
+                    
                 }
             });
         
@@ -177,6 +191,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    function readCSVFile() {
+        fetch('testData.csv')
+            .then(response => response.text())
+            .then(handleCSV)
+            .catch(error => console.error('Error reading CSV file:', error));
+    }
+
+    readCSVFile();
+    setInterval(readCSVFile, 5000); // Update every second
 
     function readCSVFile() {
         fetch('../static/Website/testData.csv')
