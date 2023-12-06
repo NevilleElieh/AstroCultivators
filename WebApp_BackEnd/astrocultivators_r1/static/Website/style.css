@@ -1,0 +1,127 @@
+/*      General             */
+html, body, .container-main {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: linear-gradient(#1b4965,#7cae7a)
+}
+.container-main, .left, .button-container, .button-container .rounded-square, 
+.button-container .circle, .right, .sensor-data-container, .image-container,
+.data-display, .current-data, .image, .i  {
+    display: flex;
+}
+.button-container, .button-container .rounded-square, .button-container .circle, 
+.image-container, .data-display, .current-data {
+    align-items: center;
+    justify-content: center;
+}
+.left, .right, .image, .i {
+    height: 100%;
+    flex-direction: column;
+}
+
+
+/*      Left Column         */
+.left {
+    width: 32.4%;
+    margin-right: 2%;
+}
+    /*      Serial Terminal     */
+    .serial-terminal {
+        height: 46.5%;
+    }
+        .serial-terminal .input-area textarea, .plant-status p {
+            margin: 0 15px;
+        }
+        .serial-terminal .input-area textarea {
+            height: 100%;
+        }
+    /*      Plant Status        */
+    .plant-status {
+        height: 46.5%;
+    }
+    .plant-status p {
+        
+    }
+    /*      Buttons             */
+    .button-container {
+        height: 6.5%;
+    }
+        .button-container .rounded-square, .button-container .circle {
+            padding: 10px;
+            margin: 0 15px 15px 15px;
+        } 
+        .button-container :hover {
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+        .button-container .rounded-square {
+            background-color: crimson;
+            border-radius: 15%;
+        }
+        .rounded-square:hover {
+            background-color: rgb(145, 15, 48);
+        }
+        .button-container .circle {
+            background-color: blue;
+            color: white;
+            border-radius: 50%;
+        }
+        .circle:hover {
+            background-color: rgb(0, 0, 165);
+        }
+
+
+/*      Right Column        */
+.right {
+    width: 65.6%;
+}
+    /*      Sensor Data         */
+    .top {
+        height: 70%;
+    }
+        .chart-container {
+            background-color: white;
+        }
+        .top .chart-container {
+            height: 100%;
+            width: 90%;
+            align-items: center;
+            justify-content: space-between;
+        } 
+        .current-data {
+            text-align: center;
+            height: 100px;
+            font-size: 50px;
+            width: 10%;
+            border: solid 1px black;
+        }
+    /*      Images              */
+    .bottom {
+        height: 25%;
+    }
+        .image-container {
+            height: 92%;
+        }
+        .bottom h2 {
+            margin-bottom: 10px;
+        }
+        .image-container > div {
+            width: 90%;
+            height: 90%;
+            background-position: center;
+        }
+        .hs-image {
+            background-image: url("image2hyperspectral.jpg");
+        }
+        
+        .rgb-image {
+            background-image: url("image1plant.jpg")
+        }
+        
+        .image {
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
