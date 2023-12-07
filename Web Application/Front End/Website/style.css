@@ -120,6 +120,10 @@ body {
         .rgb-image {
             background-image: url("image1plant.jpg")
         }
+
+        .od-image{
+            background-image: url("Obj_Det_img.png")
+        }
         
         .image {
             background-size: contain;
