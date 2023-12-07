@@ -30,20 +30,20 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const getCurrentTemp = (data) => {
-        const lastTenEntries = data.slice(-2);
+        const lastTenEntries = data.slice(-1);
         return lastTenEntries.map(entry => entry[1]);
     }
     const getCurrentHumidity = (data) => {
-        const lastTenEntries = data.slice(-2);
+        const lastTenEntries = data.slice(-1);
         return lastTenEntries.map(entry => entry[2]);
     }
     const getCurrentPressure = (data) => {
-        const lastTenEntries = data.slice(-2);
+        const lastTenEntries = data.slice(-1);
         return lastTenEntries.map(entry => entry[3]);
     }
 
     function updateHumidityChart(data) {
-        console.log('Labels:', getTimeLabels(data)); // Add this line for logging
+        //console.log('Labels:', getTimeLabels(data)); // Add this line for logging
 
         if (humidityChart) {
             humidityChart.destroy();
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateTemperatureChart(data) {
-        console.log('Labels:', getTimeLabels(data)); // Add this line for logging
+        //console.log('Labels:', getTimeLabels(data)); // Add this line for logging
 
         if (temperatureChart) {
             temperatureChart.destroy();
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updatePressureChart(data) {
-        console.log('Labels:', getTimeLabels(data)); // Add this line for logging
+       //console.log('Labels:', getTimeLabels(data)); // Add this line for logging
 
         if (pressureChart) {
             pressureChart.destroy();
@@ -176,10 +176,6 @@ document.addEventListener("DOMContentLoaded", function () {
         
     }
 
-    /* currentHumidity.innerHTML = getCurrentHumidity(data);
-    currentTemp.innerHTML = getCurrentTemp(data);
-    currentPressure.innerHTML = getCurrentPressure(data); */
-
     function handleCSV(csvText) {
         Papa.parse(csvText, {
             header: false,
@@ -188,6 +184,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 updateHumidityChart(results.data);
                 updateTemperatureChart(results.data);
                 updatePressureChart(results.data);
+                currentHumidity.innerHTML = getCurrentHumidity(results.data);
+                currentTemp.innerHTML = getCurrentTemp(results.data);
+                currentPressure.innerHTML = getCurrentPressure(results.data);
             }
         });
     }
@@ -210,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     readCSVFile();
-    setInterval(readCSVFile, 5000); // Update every second
+    setInterval(readCSVFile, 1000); // Update every second
 
     const emergencyStop = document.getElementById("Emergency-Stop");
     const homeRobot = document.getElementById("Home-Robot");
