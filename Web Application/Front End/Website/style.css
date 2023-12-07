@@ -5,14 +5,15 @@ html, body, .container-main {
     margin: 0;
 }
 body {
-    background-image: linear-gradient(#1b4965,#7cae7a)
+    padding: 0 25px 0 25px;
+    background-image: url("bg_leaf.png");
 }
-.container-main, .left, .button-container, .button-container .rounded-square, 
+.container-main, .hero-image, .left, .button-container, .button-container .rounded-square, 
 .button-container .circle, .right, .sensor-data-container, .image-container,
 .data-display, .current-data, .image, .i  {
     display: flex;
 }
-.button-container, .button-container .rounded-square, .button-container .circle, 
+.hero-image, .button-container, .button-container .rounded-square, .button-container .circle, 
 .image-container, .data-display, .current-data {
     align-items: center;
     justify-content: center;
@@ -22,31 +23,62 @@ body {
     flex-direction: column;
 }
 
-
+main{
+    display: flex;
+    flex-direction: row;
+}
+.hero-image {
+    width: 100%;
+    
+}
+.container-main {
+    flex-direction: column;
+}
+.hero-image, img {
+    height: 10%;
+}
+img {
+    height: 60%;
+    margin: 25px;
+}
 /*      Left Column         */
 .left {
     width: 32.4%;
+    height: 80vh;
     margin-right: 2%;
 }
+
+.plant-status, .serial-terminal {
+    height: 35%;
+}
+
     /*      Serial Terminal     */
     .serial-terminal {
-        height: 46.5%;
+        background-color: #305286;
+        padding-left: 10px;
+        color: white;
     }
         .serial-terminal .input-area textarea, .plant-status p {
             margin: 0 15px;
         }
-        .serial-terminal .input-area textarea {
+    
+        .input-area{
+            height: 50%;
+        }
+        textarea{
+            width: 95%;
             height: 100%;
         }
     /*      Plant Status        */
     .plant-status {
-        height: 46.5%;
-    }
-    .plant-status p {
-        
+        background-color: rgba(255, 255, 255, 60%);
+        padding: 10px;
+        height: 55%;
     }
     /*      Buttons             */
     .button-container {
+        position: absolute;
+        bottom: 25px;
         height: 6.5%;
     }
         .button-container .rounded-square, .button-container .circle {
@@ -77,13 +109,22 @@ body {
 /*      Right Column        */
 .right {
     width: 65.6%;
+    align-items: center;
 }
     /*      Sensor Data         */
     .top {
+        width: 100%;
         height: 70%;
     }
-        .chart-container {
-            background-color: white;
+    .sensor-data-container {
+        margin: 0;
+    }
+    .sensor-data{
+        border: groove #c8c8c8 5px;
+    }
+    .chart-container {
+        padding-right: 25px;
+        background-color: white;
         }
         .top .chart-container {
             height: 100%;
@@ -94,13 +135,17 @@ body {
         .current-data {
             text-align: center;
             height: 100px;
-            font-size: 50px;
+            font-size: 25px;
             width: 10%;
             border: solid 1px black;
+            background-color: #98ced3;
         }
     /*      Images              */
     .bottom {
         height: 25%;
+        width: 85%;
+        background-color: rgba(202, 227, 221, 0.55);
+        padding: 25px 0 25px 0;
     }
         .image-container {
             height: 92%;
@@ -120,11 +165,9 @@ body {
         .rgb-image {
             background-image: url("image1plant.jpg")
         }
-
-        .od-image{
-            background-image: url("Obj_Det_img.png")
+        .od-image {
+            background-image: url("Obj_Det_img.png");
         }
-        
         .image {
             background-size: contain;
             background-repeat: no-repeat;
