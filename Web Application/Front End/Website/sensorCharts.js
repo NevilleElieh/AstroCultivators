@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     readCSVFile();
-    setInterval(readCSVFile, 5000); // Update every second
+    setInterval(readCSVFile, 1000); // Update every second
     
 
     const emergencyStop = document.getElementById("Emergency-Stop");
