@@ -10,7 +10,7 @@
 		When changes are significant and stable. After proper testing has been done on the individual branch's changes and code has been reviewed
 
 	Who is responsible for send pull request to merge the code back to the main/test branch?
-		Group leader Neville will manage merges to main but code should be maintained and up to date when possible in brancehes by that branches managing student
+		Group leader Neville will manage merges to main but code should be maintained and up to date when possible in branches by that branches managing student
 
 	Who will be responsible to process the pull request to merge branches?
 		Group Leader Neville will oversee merge requests
