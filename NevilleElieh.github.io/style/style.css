@@ -11,3 +11,9 @@ html, body {
 .nav-link {
     display: inline;
 }
+.member-bio {
+    display: none;
+}
+.member-container:hover .member-bio {
+    display: block;
+}
