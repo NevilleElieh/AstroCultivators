@@ -1,0 +1,20 @@
+#team {
+    height: 76vh;
+    width: 100%;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    grid-template-rows: repeat(3, 130px);
+    padding: 5%;
+}
+.member-container {
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+.pfp {
+    width: 100%;
+    height: auto;
+}
