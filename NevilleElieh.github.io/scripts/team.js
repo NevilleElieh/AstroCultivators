@@ -7,11 +7,11 @@ function createMember(member) {
         <div class="member-container" id=${member.name}>
             <img src="./assets/team/${member.pfp}" alt="" class="pfp">
             <h3>${member.name}</h3>
-            <p class="member-bio">${member.bio}</p>
             <div>
                 <a href=${member.linkedin}><i class="fa-brands fa-linkedin"></i></a>
                 <a href="${member.github}"><i class="fa-brands fa-github"></i></a>
             </div>
+            <p class="member-bio">${member.bio}</p>
         </div>
         `
     );
