@@ -30,16 +30,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const getCurrentTemp = (data) => {
-        const lastTenEntries = data.slice(-1);
-        return lastTenEntries.map(entry => entry[1]);
+        const currentTempData = data.slice(-2);
+        return currentTempData[0][1];
     }
     const getCurrentHumidity = (data) => {
-        const lastTenEntries = data.slice(-1);
-        return lastTenEntries.map(entry => entry[2]);
+        const currentHumidityData = data.slice(-2);
+        return currentHumidityData[0][2];
     }
     const getCurrentPressure = (data) => {
-        const lastTenEntries = data.slice(-1);
-        return lastTenEntries.map(entry => entry[3]);
+        const currentPressureData = data.slice(-2);
+        return currentPressureData[0][3];
     }
 
     function updateHumidityChart(data) {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                     scales: {
                         xAxes: [{
-                            type: 'time',
+                            type: 'timeseries',
                             time: {
                                 parser: 'MM/DD/YYYY H:mm',
                                 unit: 'hour',
@@ -89,15 +89,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             });
+            
+        }
         
-    }
-
-    function updateTemperatureChart(data) {
-        //console.log('Labels:', getTimeLabels(data)); // Add this line for logging
-
-        if (temperatureChart) {
-            temperatureChart.destroy();
-        } 
+        function updateTemperatureChart(data) {
+            //console.log('Labels:', getTimeLabels(data)); // Add this line for logging
+            
+            if (temperatureChart) {
+                temperatureChart.destroy();
+            } 
             temperatureChart = new Chart(temperatureCanvas, {
                 type: 'line',
                 data: {
@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                     scales: {
                         xAxes: [{
+                            type: 'timeseries',
                             ticks: {
                                 display: false
                             }
@@ -130,15 +131,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 }
             });
+            
+        }
         
-    }
-
-    function updatePressureChart(data) {
-       //console.log('Labels:', getTimeLabels(data)); // Add this line for logging
-
-        if (pressureChart) {
-            pressureChart.destroy();
-        } 
+        function updatePressureChart(data) {
+            //console.log('Labels:', getTimeLabels(data)); // Add this line for logging
+            
+            if (pressureChart) {
+                pressureChart.destroy();
+            } 
             pressureChart = new Chart(pressureCanvas, {
                 type: 'line',
                 data: {
@@ -160,6 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     },
                     scales: {
                         xAxes: [{
+                            type: 'timeseries',
                             ticks: {
                                 display: false
                             }
@@ -202,8 +204,8 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(readCSVFile, 1000); // Update every second
     
 
-    const emergencyStop = document.getElementById("Emergency-Stop");
-    const homeRobot = document.getElementById("Home-Robot");
+    const emergencyStop = document.getElementById("emergency-stop");
+    const homeRobot = document.getElementById("home-robot");
 
     // Add a click event listener to make it clickable
     emergencyStop.addEventListener("click", function () {
