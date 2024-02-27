@@ -3,7 +3,7 @@
 3. Post your answers to this group discussion.
 	How many branches will you maintain, and what is each branch used for and who will be working on them?
 		Main - For release, or newest release of project - Maintained by Neville
-		Web Application - Sandra
+		Web_App Backend - Sandra
 		Sensor Data Code - Codi
 	
 	When should group members merge the main branch to their working branches (if your group members are not working on the main branch)?
