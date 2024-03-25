@@ -33,5 +33,5 @@ def hello_plant_lover():
     return 'Hello, Plant Lover!'
 
 if __name__ == "__main__":
-    host = '130.166.24.117'
+    host = '130.166.24.225'
     app.run(host=host, port=5000, debug=True)
